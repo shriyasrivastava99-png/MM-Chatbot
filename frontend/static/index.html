@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar for Document Management & Conversations -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-robot"></i> Chatbot</h2>
+            </div>
+            
+            <button id="new-chat-btn" class="glass-btn primary"><i class="fa-solid fa-plus"></i> New Chat</button>
+
+            <div class="sidebar-section">
+                <h3>My Documents</h3>
+                <div id="document-list" class="item-list">
+                    <!-- Documents will appear here -->
+                    <div class="empty-state">No documents uploaded yet.</div>
+                </div>
+                <button id="upload-doc-btn" class="glass-btn secondary"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Document</button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Recent Chats</h3>
+                <div id="conversation-list" class="item-list">
+                    <!-- Conversations will appear here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <div class="header-info">
+                    <span class="status-dot"></span>
+                    <h3>AI Assistant Ready</h3>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div id="chat-messages" class="messages-area">
+                <div class="welcome-message">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <h1>How can I help you today?</h1>
+                    <p>I can answer questions, generate images, analyze photos, read documents, and search the web.</p>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-glass-box">
+                    <button class="icon-btn attachment-btn" title="Upload Image/Document"><i class="fa-solid fa-paperclip"></i></button>
+                    <textarea id="message-input" placeholder="Type your message here..." rows="1"></textarea>
+                    <button class="icon-btn voice-btn" title="Voice Input"><i class="fa-solid fa-microphone"></i></button>
+                    <button id="send-btn" class="icon-btn send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+                <div class="input-footer">
+                    <span><i class="fa-solid fa-shield-halved"></i> AI can make mistakes. Verify important information.</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Hidden file input for Phase 2/3 -->
+    <input type="file" id="file-upload" hidden accept=".pdf,.txt,.docx,image/*">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
